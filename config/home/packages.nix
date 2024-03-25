@@ -10,29 +10,29 @@ in {
     libvirt 
     swww 
     grim 
-    slurp
+    slurp 
     gnome.file-roller
-    swaynotificationcenter
+    swaynotificationcenter 
     rofi-wayland 
-    imv
-    transmission-gtk
+    imv 
+    transmission-gtk 
     mpv
-    gimp
-    obs-studio
-    rustup
-    audacity
-    pavucontrol
-    tree
+    gimp 
+    obs-studio 
+    rustup 
+    audacity 
+    pavucontrol 
+    tree 
     protonup-qt
-    font-awesome
-    spotify
-    swayidle
-    neovide
+    font-awesome 
+    spotify 
+    swayidle 
+    neovide 
     swaylock
-    vscode
     brave
-    zoxide
     vlc
+    vscode
+    zoxide
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })

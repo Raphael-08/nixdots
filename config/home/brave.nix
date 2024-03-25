@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{config,lib, pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
@@ -45,6 +45,8 @@
       { id = "fcphghnknhkimeagdglkljinmpbagone"; }
       # Youtube-shorts block
       { id = "jiaopdjbehhjgokpphdfgmapkobbnmjp"; }
+      # adblocer ultimate
+      { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
     ];
   };
 
@@ -66,11 +68,4 @@
     # do not idle while watching videos
     "idleinhibit fullscreen,Brave-browser"
   ];
-
-  custom.persist = {
-    home.directories = [
-      ".cache/BraveSoftware"
-      ".config/BraveSoftware"
-    ];
-  };
 }

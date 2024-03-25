@@ -3,7 +3,8 @@
 let
   plugins = pkgs.vimPlugins;
   theme = config.colorScheme.palette;
-in {
+in 
+{
   programs.nixvim = {
     enable = true;
 
@@ -13,10 +14,14 @@ in {
       clipboard="unnamedplus";
       number = true;         # Show line numbers
       relativenumber = true; # Show relative line numbers
+      tabstop = 2;
       shiftwidth = 2;        # Tab width should be 2
       softtabstop = 2;
+      expandtab = true;
+      shiftround = true;
       smartindent = true;
       wrap = false;
+      smartcase = true;
       swapfile = false;
       backup = false;
       hlsearch = false;
@@ -47,8 +52,11 @@ in {
     };
     
     plugins = {
-      barbecue.enable = true;
+      barbecue.enable = true;  
       gitsigns.enable = true;
+      neo-tree.enable = true;
+      luasnip.enable  = true;
+      surround.enable = true;
       telescope = {
 	enable = true;
 	keymaps = {
@@ -71,48 +79,155 @@ in {
       lsp = {
 	enable = true;
 	servers = {
-	  tsserver.enable = true;
-	  lua-ls.enable = true;
-	  bashls.enable = true;
+          tsserver.enable = true;
+          lua-ls.enable = true;
+          bashls.enable = true;
+          eslint.enable = true;
 	  rust-analyzer = {
 	    enable = true;
 	    installRustc = true;
 	    installCargo = true;
 	  };
-	  nixd.enable = true;
+          nil_ls.enable = true;
 	  html.enable = true;
 	  ccls.enable = true;
-	  cmake.enable = true;
-	  csharp-ls.enable = true;
+          cmake.enable = true;
+          emmet_ls.enable = true;
 	  cssls.enable = true;
 	  gopls.enable = true;
 	  jsonls.enable = true;
 	  pyright.enable = true;
 	  tailwindcss.enable = true;
+          java-language-server.enable = true;
 	};
       };
       lsp-lines.enable = true;
+      lsp-format.enable =true;
       treesitter = {
-	enable = true;
-	nixGrammars = true;
+     	enable = true;
+        nixGrammars = true;
       };
-      nvim-cmp = {
-	enable = true;
-	autoEnableSources = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = {
-	    action = ''cmp.mapping.select_next_item()'';
-	    modes = [ "i" "s" ];
-	  };
-	};
+      cmp = {
+        enable = true;
+        settings = {
+        autoEnableSources = true;
+        sources = [
+            { name = "nvim_lsp"; }
+            { name = "nvim_lsp_document_symbol"; }
+            { name = "nvim_lsp_signature_help"; }
+            { name = "luasnip"; }
+            { name = "path"; }
+          ];
+          snippet.expand = ''
+            function(args)
+              require('luasnip').lsp_expand(args.body)
+            end
+          '';
+        };
+        extraOptions.mapping = {
+          "<C-b>" = "cmp.mapping.scroll_docs(-4)";
+          "<C-f>" = "cmp.mapping.scroll_docs(4)";
+          "<C+c>" = "cmp.mapping.abort()";
+          "<Esc>" = "cmp.mapping.abort()";
+          "<CR>" = "cmp.mapping.confirm({ select = false })";
+
+          "<C-p>" = "cmp.mapping.select_prev_item()";
+          "<C-n>" = "cmp.mapping.select_next_item()";
+
+          "<Up>" = "cmp.mapping.select_prev_item()";
+          "<Down>" = "cmp.mapping.select_next_item()";
+
+          "<C-Space>" = "cmp.mapping.complete({})";
+
+          "<Tab>" = ''
+            cmp.mapping(
+              function(fallback)
+                if cmp.visible() then
+                  cmp.select_next_item()
+                elseif require("luasnip").expand_or_locally_jumpable() then
+                  require("luasnip").expand_or_jump()
+                elseif has_words_before() then
+                  cmp.complete()
+                else
+                  fallback()
+                end
+              end,
+              {"i", "s"}
+            )
+          '';
+
+          "<S-Tab>" = ''
+            cmp.mapping(
+            function(fallback)
+              if cmp.visible() then
+                cmp.select_prev_item()
+              elseif require("luasnip").jumpable(-1) then
+                require("luasnip").jump(-1)
+              else
+                fallback()
+              end
+            end,
+            {"i", "s"}
+            )
+          '';
+        };
       };
-    };
+      conform-nvim = {
+        enable = true;
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 500;
+        };
+        formattersByFt = {
+          html = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          css = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          javascript = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          javascriptreact = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          typescript = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          typescriptreact = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          python = [ "black" ];
+          # lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          markdown = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          rust = [ "rustfmt" ];
+        };
+      };
+   };
 
     extraPlugins = [ plugins.telescope-file-browser-nvim ];
 
@@ -202,8 +317,14 @@ in {
         action = ":bprev<CR>";
         options.silent = false;
       }
+      {
+        action = "<cmd>Neotree toggle<CR>";
+        key = "<leader>b";  # this line is changed
+        mode = "n";
+        options = {
+          desc = "Toggle Tree View.";
+        }; 
+      }
     ];
-
-
   };
- } 
+}

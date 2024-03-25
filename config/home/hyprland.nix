@@ -133,8 +133,11 @@ in with lib; {
 	bind = ${modifier},W,exec,${browser}
       ''}
       bind = ${modifier},E,exec,emopicker9000
+      bind = ALT,d,exec,brave --app=https://discord.com/login/ --window-mode=windowed
+      bind = ALT,g,exec,brave --app=https://github.com/ --window-mode=windowed
+      bind = ${modifier}CTRL,p,exec,wlogout
+      bind = ${modifier},c,exec,code
       bind = ${modifier},S,exec,screenshootin
-      bind = ${modifier},D,exec,discord
       bind = ${modifier},O,exec,obs
       bind = ${modifier},G,exec,gimp
       bind = ${modifier}SHIFT,G,exec,godot4

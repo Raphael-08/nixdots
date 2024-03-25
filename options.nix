@@ -5,14 +5,14 @@
 let
   # THINGS YOU NEED TO CHANGE
   username = "mrv";
-  hostname = "HanMa";
+  hostname = "HanMA";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/zaneyos";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
 in {
   # User Variables
   username = "mrv";
-  hostname = "HanMa";
+  hostname = "HanMA";
   gitUsername = "Raphael-08";
   gitEmail = "mohanvarma130@gmail.com";
   theme = "atelier-cave";
@@ -38,7 +38,7 @@ in {
   theKBDVariant = "";
   theLCVariables = "en_US.UTF-8";
   theTimezone = "Asia/Kolkata";
-  theShell = "zsh"; # Possible options: bash, zsh
+  theShell = "bash"; # Possible options: bash, zsh
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "x11"; # Either x11 or wayland ONLY. Games might require x11 set here
   # For Hybrid Systems intel-nvidia
@@ -67,13 +67,13 @@ in {
   # Enable Flatpak & Larger Programs
   distrobox = false;
   flatpak = true;
-  kdenlive = true;
+  kdenlive = false;
   blender = false;
   enableZeroAD = false;
 
   # Enable Support For
   # Logitech Devices
-  logitech = true;
+  logitech = false;
 
   # Enable Terminals
   # If You Disable All You Get Kitty
