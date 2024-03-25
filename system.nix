@@ -17,7 +17,6 @@ in {
   # Enable networking
   networking.hostName = "${hostname}"; # Define your hostname
   networking.networkmanager.enable = true;
-
   # Set your time zone
   time.timeZone = "${theTimezone}";
 
@@ -42,7 +41,7 @@ in {
     mutableUsers = true;
     users."${username}" = {
       homeMode = "755";
-      hashedPassword = "$6$YdPBODxytqUWXCYL$AHW1U9C6Qqkf6PZJI54jxFcPVm2sm/XWq3Z1qa94PFYz0FF.za9gl5WZL/z/g4nFLQ94SSEzMg5GMzMjJ6Vd7.";
+      hashedPassword = "$6$18JKFnAP84d62vB.$63g0TDv22PItmkWhnh26yctPwwi5K.4x48CSHnNs11bxY0yKw/setlgeCB/pePMuCEYYgoqdN9pjFLWRQ9ZXR/";
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
@@ -53,6 +52,7 @@ in {
   };
 
   environment.variables = {
+    ENVER = "unstable";
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
