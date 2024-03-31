@@ -1,5 +1,5 @@
 {
-  description = "ZaneyOS";
+  description = "Rapahel-08";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -14,6 +14,10 @@
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    catppuccin-grub = {
+      url = "github:catppuccin/grub";
+      flake = false;
     };
     impermanence.url = "github:nix-community/impermanence";
   };

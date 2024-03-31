@@ -5,7 +5,7 @@
 let
   # THINGS YOU NEED TO CHANGE
   username = "mrv";
-  hostname = "HanMA";
+  hostname = "HanMa";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/zaneyos";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
