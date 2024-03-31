@@ -1,6 +1,3 @@
-# PLEASE READ THE WIKI FOR DETERMINING
-# WHAT TO PUT HERE AS OPTIONS. 
-# https://gitlab.com/Zaney/zaneyos/-/wikis/Setting-Options
 
 let
   # THINGS YOU NEED TO CHANGE
@@ -31,7 +28,7 @@ in {
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
-  clock24h = false;
+  clock24h = true;
   theLocale = "en_US.UTF-8";
   theKBDLayout = "us";
   theSecondKBDLayout = "de";

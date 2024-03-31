@@ -123,7 +123,13 @@ in with lib; {
       master {
         new_is_master = true
       }
+
+
       bindr = ${modifier}, ${modifier}_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window
+      bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
+      bind = ${modifier}SHIFT,Return,exec,pycharm-community
+
+
       bind = ${modifier},Return,exec,${terminal}
       # bind = ${modifier}SHIFT,Return,exec,rofi-launcher
       bind = ${modifier}SHIFT,W,exec,web-search
