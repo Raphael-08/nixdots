@@ -20,6 +20,7 @@
       flake = false;
     };
     impermanence.url = "github:nix-community/impermanence";
+    spicetify-nix.url = "github:the-argus/spicetify-nix";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
