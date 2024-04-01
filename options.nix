@@ -9,7 +9,7 @@ let
 in {
   # User Variables
   username = "mrv";
-  hostname = "HanMA";
+  hostname = "HanMa";
   gitUsername = "Raphael-08";
   gitEmail = "mohanvarma130@gmail.com";
   theme = "atelier-cave";
@@ -28,7 +28,7 @@ in {
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
-  clock24h = true;
+  clock24h = flase;
   theLocale = "en_US.UTF-8";
   theKBDLayout = "us";
   theSecondKBDLayout = "de";
