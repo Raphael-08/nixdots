@@ -25,7 +25,6 @@ in {
     tree 
     protonup-qt
     font-awesome 
-    spotify 
     swayidle 
     neovide 
     swaylock

@@ -22,7 +22,9 @@
     ./wezterm.nix
     ./zeroad.nix
     ./zsh.nix
-
+    ./spotify.nix
+    ./zoxide.nix
+    ./discord.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];
