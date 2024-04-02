@@ -125,6 +125,8 @@ in with lib; {
       }
 
 
+      bind = ALT,s,exec,spotify
+      bind = ${modifier},d,exec,discord
       bindr = ${modifier}, ${modifier}_L, exec, pkill rofi || rofi -show drun -modi drun,filebrowser,run,window
       bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
       bind = ${modifier}SHIFT,Return,exec,pycharm-community
