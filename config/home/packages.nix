@@ -32,6 +32,7 @@ in {
     vlc
     vscode
     zoxide
+    corepack_21
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
