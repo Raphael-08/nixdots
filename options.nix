@@ -12,7 +12,7 @@ in {
   hostname = "HanMa";
   gitUsername = "Raphael-08";
   gitEmail = "mohanvarma130@gmail.com";
-  theme = "atelier-cave";
+  theme = "catppuccin-mocha";
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
