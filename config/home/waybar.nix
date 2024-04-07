@@ -1,10 +1,9 @@
-
 { pkgs, config, lib, ... }:
 
 let
   palette = config.colorScheme.palette;
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-  inherit (import ../../options.nix) slickbar bar-number simplebar clock24h;
+  inherit (import ../../options.nix) slickbar bar-number simplebar clock24h waybarAnim;
 in with lib; {
   # Configure & Theme Waybar
   programs.waybar = {
@@ -29,10 +28,12 @@ in with lib; {
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       "clock" = {
-		format = if clock24h == true then " {:%H:%M}" else " {:%I:%M %p}";
+	format = if clock24h == true then '' {:L%H:%M}'' 
+	else '' {:L%I:%M %p}'';
       	tooltip = true;
-		tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
+	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
+
       "hyprland/window" = {
       	max-length = 25;
       	separate-outputs = false;
@@ -341,25 +342,18 @@ in with lib; {
 	  padding: 2px 10px;
 	  border-radius: 10px;
 	''}
-      }
-      #clock {
-    	color: #${palette.base0B};
-	${if slickbar == true then ''
-	  background: #${palette.base00};
-	  border-radius: 15px 50px 15px 50px;
-	  margin: 5px;
-	  padding: 2px 20px;
-	'' else if simplebar == true then ''
-	  background: #${palette.base00};
-	  margin: 6px 4px;
-	  padding: 0px 10px;
-	  border-radius: 15px;
-	'' else ''
-	  background: #${palette.base01};
-	  margin: 4px;
-	  padding: 2px 10px;
-	  border-radius: 10px;
-	''}
+     }
+    #clock {
+    		color: #${palette.base01};
+        background: linear-gradient(45deg, #${palette.base0C}, #${palette.base0F}, #${palette.base0B}, #${palette.base08});
+        background-size: 300% 300%;
+        ${if waybarAnim == true then ''
+          animation: gradient_horizontal 15s ease infinite;
+        '' else '' 
+        ''}
+				margin: 4px;
+				padding: 2px 10px;
+				border-radius: 10px;
       }
       #cpu {
     	color: #${palette.base07};

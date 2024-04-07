@@ -28,6 +28,7 @@ in {
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   # System Settings
+  waybarAnim = true;
   clock24h = false;
   theLocale = "en_US.UTF-8";
   theKBDLayout = "us";
