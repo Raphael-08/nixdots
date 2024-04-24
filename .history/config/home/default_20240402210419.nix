@@ -24,7 +24,7 @@
     ./zsh.nix
     ./spotify.nix
     ./zoxide.nix
-    ./vesktop.nix
+    ./discord.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];

@@ -126,7 +126,7 @@ in with lib; {
 
 
       bind = ALT,s,exec,spotify
-      bind = ${modifier},d,exec,vesktop
+      bind = ${modifier},d,exec,discord
       bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
       bind = ${modifier}SHIFT,Return,exec,pycharm-community
 

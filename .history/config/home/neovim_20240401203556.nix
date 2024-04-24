@@ -10,41 +10,27 @@ in
 
       globals.mapleader = " "; # Sets the leader key to space
 
-
-      opts = {
+      options = {
         clipboard="unnamedplus";
-        # Enable relative line numbers
-        number = true;         
-        relativenumber = true;
-
-        # Set tabs to 2 spaces
+        number = true;         # Show line numbers
+        relativenumber = true; # Show relative line numbers
         tabstop = 2;
-        shiftwidth = 2;       
+        shiftwidth = 2;        # Tab width should be 2
         softtabstop = 2;
         expandtab = true;
         shiftround = true;
-
-        # Enable auto indenting and set it to spaces
         smartindent = true;
-
-        # Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
-        breakindent = true;
-
-        # Enable text wrap
-        wrap = true;        
+        wrap = false;
         smartcase = true;
         swapfile = false;
         backup = false;
-
-        # Enable incremental searching
         hlsearch = false;
         incsearch = true;
-
-        # Enable 24-bit colors
         termguicolors = true;
         scrolloff = 8;
         updatetime = 50;
       };
+
       colorschemes.base16.enable = true;
       colorschemes.base16.colorscheme = {
         base00 = "#${theme.base00}";
@@ -69,34 +55,9 @@ in
         barbecue.enable = true;  
         gitsigns.enable = true;
         neo-tree.enable = true;
-        lsp-format.enable = true;
+        luasnip.enable  = true;
         surround.enable = true;
-        luasnip = {
-          enable = true;
-          extraConfig = {
-            enable_autosnippets = true;
-            store_selection_keys = "<Tab>";
-          };
-          fromVscode = [
-            {
-              lazyLoad = true;
-              paths = "${pkgs.vimPlugins.friendly-snippets}";
-            }
-          ];
-        };
-
-        lspkind = {
-          enable = true;
-          symbolMap = {
-            Copilot = "";
-          };
-          extraOptions = {
-            maxwidth = 50;
-            ellipsis_char = "...";
-          };
-        };
         cmp.enable = true;
-        lazy.enable = true;
         telescope = {
           enable = true;
           keymaps = {
@@ -108,7 +69,7 @@ in
         nvim-colorizer.enable = true;
         nvim-autopairs.enable = true;
         nix.enable = true;
-        comment.enable = true;
+        comment-nvim.enable = true;
         lualine = {
           enable = true;
         };
@@ -139,10 +100,10 @@ in
             pyright.enable = true;
             tailwindcss.enable = true;
             java-language-server.enable = true;
-            nixd.enable = true;
           };
         };
         lsp-lines.enable = true;
+        lsp-format.enable =true;
         treesitter = {
           enable = true;
           nixGrammars = true;
@@ -216,7 +177,6 @@ in
                 lspFallback = true;
                 timeoutMs = 500;
               };
-              notifyOnError = true;
               formattersByFt = {
                 html = [
                   [
@@ -256,7 +216,7 @@ in
                 ];
                 python = [ "black" ];
           # lua = [ "stylua" ];
-          nix = [ "alejandra" ];
+          nix = [ "nixfmt" ];
           markdown = [
             [
               "prettierd"
@@ -331,19 +291,6 @@ in
       },
       tabline = {},
       extensions = {},
-      require("neo-tree").setup({
-        event_handlers = {
-          {
-            event = "file_opened",
-            handler = function(file_path)
-            -- auto close
-            -- vimc.cmd("Neotree close")
-            -- OR
-            require("neo-tree.command").execute({ action = "close" })
-            end
-          },
-        }
-      })
     }
     '';
 
