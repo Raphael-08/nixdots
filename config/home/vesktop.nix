@@ -266,7 +266,7 @@
           WebKeybinds.enabled = true;
         };
         themeLinks = [
-          "https://raw.githubusercontent.com/orblazer/discord-nordic/master/nordic.vencord.css"
+          "https://raw.githubusercontent.com/catppuccin/discord/blob/main/themes/mocha.theme.css"
         ];
         transparent = false;
         useQuickCss = false;
