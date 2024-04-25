@@ -128,7 +128,6 @@ in
               installRustc = true;
               installCargo = true;
             };
-            nil_ls.enable = true;
             html.enable = true;
             ccls.enable = true;
             cmake.enable = true;
