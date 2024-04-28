@@ -35,7 +35,7 @@ in {
     nodejs
     nodePackages.pnpm
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    (ollama.override { acceleration = "cuda";})
+    (ollama.override { acceleration = "cuda";enableCuda = "true";})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })

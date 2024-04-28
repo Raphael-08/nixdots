@@ -34,8 +34,9 @@ in {
     zoxide
     nodejs
     nodePackages.pnpm
+    ollama
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
-    (ollama.override { acceleration = "cuda";})
+    (pkgs.ollama.override { enableCuda = true; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })

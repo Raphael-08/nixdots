@@ -34,6 +34,7 @@ in {
     zoxide
     nodejs
     nodePackages.pnpm
+    ollama
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     (ollama.override { acceleration = "cuda";})
     # Import Scripts
