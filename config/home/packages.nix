@@ -23,7 +23,7 @@ in {
     audacity 
     pavucontrol 
     tree 
-    protonup-qt[cudart] CUDART CUDA Compute Capability detected: 8.9"
+    protonup-qt
     font-awesome 
     swayidle 
     neovide 

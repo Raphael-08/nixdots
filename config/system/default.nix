@@ -10,14 +10,11 @@
     ./distrobox.nix
     ./flatpak.nix
     ./hwclock.nix
-    ./intel-amd.nix
-    ./intel-gpu.nix
     ./intel-nvidia.nix
     ./kernel.nix
     ./logitech.nix
     ./nfs.nix
     ./ntp.nix
-    ./nvidia.nix
     ./packages.nix
     ./polkit.nix
     ./python.nix
