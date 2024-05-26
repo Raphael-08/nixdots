@@ -64,7 +64,7 @@ in {
 
   # Enable Flatpak & Larger Programs
   distrobox = false;
-  flatpak = true;
+  flatpak = false;
   kdenlive = false;
   blender = false;
   enableZeroAD = false;
@@ -80,7 +80,7 @@ in {
   kitty = true;
 
   # Enable Python & PyCharm
-  python = true;
+  python = false;
   
   # Enable SyncThing
   syncthing = false;
