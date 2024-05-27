@@ -3,7 +3,20 @@
 
 {
   home.packages = with pkgs; [
-    vesktop
+    (pkgs.vesktop.overrideAttrs (o: rec {
+    version = "1.5.1";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "Vencord";
+      repo = "Vesktop";
+      rev = "v${version}";
+      hash = "sha256-OyAGzlwwdEKBbJJ7h3glwx/THy2VvUn/kA/Df3arWQU=";
+    };
+
+    pnpmDeps = o.pnpmDeps.overrideAttrs {
+      outputHash = "sha256-JLjJZYFMH4YoIFuyXbGUp6lIy+VlYZtmwk2+oUwtTxQ=";
+    };
+  }))
   ];
 
   xdg.configFile = {
