@@ -4,7 +4,7 @@
 {
   home.packages = with pkgs; [
     (pkgs.vesktop.overrideAttrs (o: rec {
-    version = "1.5.1";
+    version = "1.5.2";
 
     src = pkgs.fetchFromGitHub {
       owner = "Vencord";
