@@ -11,6 +11,7 @@
     ./flatpak.nix
     ./hwclock.nix
     ./intel-nvidia.nix
+    ./nvidia.nix
     ./kernel.nix
     ./logitech.nix
     ./nfs.nix
