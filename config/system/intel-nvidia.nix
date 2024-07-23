@@ -13,10 +13,10 @@ in
       };
     };
     environment.systemPackages = with pkgs; [
-      nvtop
+      nvtopPackages.full
     ];
     # OpenGL
-    hardware.opengl = {
+    hardware.graphics = {
       extraPackages = with pkgs; [
         intel-media-driver
         vaapiIntel

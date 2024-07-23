@@ -11,11 +11,11 @@ in {
     swww 
     grim 
     slurp 
-    gnome.file-roller
+    file-roller
     swaynotificationcenter 
     rofi-wayland 
     imv 
-    transmission-gtk 
+    transmission-gtk
     mpv
     gimp 
     obs-studio 
@@ -35,7 +35,7 @@ in {
     nodejs
     glxinfo
     unigine-valley
-    nodePackages.pnpm
+    corepack_22
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     (ollama.override { acceleration = "cuda";})
     # Import Scripts
