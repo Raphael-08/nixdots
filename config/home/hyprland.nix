@@ -34,7 +34,8 @@ in
       in
         concatStrings [
           ''
-                 monitor=,preferred,auto,1
+                 monitor=HDMI-A-1, highres, auto,1
+                 monitor=eDP-1,1920x1200@60,auto,1,mirror, HDMI-A-1
                  windowrule = fullscreen, ^(wlogout)$
                  windowrule = animation fade,^(wlogout)$
                  general {

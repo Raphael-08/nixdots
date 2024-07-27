@@ -32,10 +32,7 @@ in {
     vlc
     vscode
     zoxide
-    nodejs
     glxinfo
-    unigine-valley
-    corepack_22
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     (ollama.override { acceleration = "cuda";})
     # Import Scripts

@@ -80,7 +80,7 @@ in {
   kitty = true;
 
   # Enable Python & PyCharm
-  python = false;
+  python = true;
   
   # Enable SyncThing
   syncthing = false;
