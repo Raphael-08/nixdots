@@ -120,14 +120,14 @@ in
                    animation = workspaces, 1, 5, wind
                  }
                  decoration {
-                   rounding = 10
-                   drop_shadow = false
+                   rounding = 15
                    blur {
-                       enabled = true
-                       size = 5
-                       passes = 3
-                       new_optimizations = on
-                       ignore_opacity = on
+                       enabled = true;
+                       xray = true;
+                       noise = 0.01;
+                       contrast = 0.9;
+                       brightness = 0.8;
+                       popups = true;
                    }
                  }
                  plugin {
