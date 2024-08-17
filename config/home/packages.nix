@@ -15,7 +15,7 @@ in {
     swaynotificationcenter 
     rofi-wayland 
     imv 
-    transmission-gtk
+    transmission_4-gtk
     mpv
     gimp 
     obs-studio 
