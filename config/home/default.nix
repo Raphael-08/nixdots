@@ -24,6 +24,7 @@
     ./spotify.nix
     ./zoxide.nix
     ./vesktop.nix
+    ./hyprlock.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];

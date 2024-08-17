@@ -157,8 +157,6 @@ in
                  bind = ALT,s,exec,spotify
                  bind = ${modifier},d,exec,vesktop
                  bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
-                 bind = ${modifier}SHIFT,p,exec,pycharm-community
-                 bind = ${modifier},v,exec,neovide
 
                  bind = ${modifier},Return,exec,${terminal}
                  bind = ${modifier}SHIFT,Return,exec,rofi-launcher
