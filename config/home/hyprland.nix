@@ -34,8 +34,8 @@ in
       in
         concatStrings [
           ''
-                 monitor=HDMI-A-1, highres, auto,1
-                 monitor=eDP-1,1920x1200@60,auto,1,mirror, HDMI-A-1
+                 monitor = HDMI-A-1, highres, auto,1
+                 monitor = eDP-1,1920x1200@60,auto,1,mirror, HDMI-A-1
                  windowrule = fullscreen, ^(wlogout)$
                  windowrule = animation fade,^(wlogout)$
                  general {
@@ -144,7 +144,7 @@ in
                  exec-once = swaync
                  exec-once = wallsetter
                  exec-once = nm-applet --indicator
-                 exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
+                 exec-once = swayidle -w timeout 300 'hyprlock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock -f -c 000000'
                  dwindle {
                    pseudotile = true
                    preserve_split = true
@@ -153,7 +153,7 @@ in
                    new_status = true
                  }
 
-
+                 bind = ${modifier},Z,exec,zen
                  bind = ALT,s,exec,spotify
                  bind = ${modifier},d,exec,vesktop
                  bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
@@ -172,7 +172,6 @@ in
               ''
             }
                  bind = ${modifier},E,exec,emopicker9000
-                 bind = ALT,d,exec,brave --app=https://discord.com/login/ --window-mode=windowed
                  bind = ALT,g,exec,brave --app=https://github.com/ --window-mode=windowed
                  bind = ${modifier}CTRL,p,exec,wlogout
                  bind = ${modifier},c,exec,code
