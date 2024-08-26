@@ -5,7 +5,7 @@
   ...
 }:
 let
-  wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-Cafe.png";
+  wallpaper = "/home/mrv/Pictures/Wallpapers/johnwick.png";
 in
 {
   home.packages = with pkgs; [ hyprlock ];
@@ -42,7 +42,7 @@ in
       label {
         monitor =
           text = cmd[update:1000] echo "<b><big> $(date +"%I:%M %p") </big></b>"
-          color = rgb(0,0,0)
+          color = rgb(255,255,255)
           font_size = 64
           font_family = MonoLisa Nerd Font
           position = 0, 16
