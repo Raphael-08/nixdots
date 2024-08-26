@@ -6,10 +6,17 @@ let
     pandas
     requests
     setuptools
+    torch
+    diffusers
+    jupyter
+    notebook
+    matplotlib
+    seaborn
+    accelerate
+    transformers
   ];
 in lib.mkIf (python == true) {
   environment.systemPackages = with pkgs; [
     (pkgs.python3.withPackages my-python-packages)
   ];
-
 }
