@@ -24,6 +24,7 @@
     ./zoxide.nix
     ./vesktop.nix
     ./hyprlock.nix
+    ./zenbrowser.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];
