@@ -17,7 +17,7 @@ in {
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
   borderAnim = true;
-  browser = "brave";
+  browser = "zen";
   wallpaperGit = "https://github.com/Raphael-08/Wallpaper-lib.git"; # This will give you my wallpapers
   # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 
   wallpaperDir = "${userHome}/Pictures/Wallpapers";

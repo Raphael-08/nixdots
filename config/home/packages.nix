@@ -6,7 +6,6 @@ let
 in {
   # Install Packages For The User
   home.packages = with pkgs; [
-    pkgs."${browser}"
     libvirt 
     swww 
     grim 
