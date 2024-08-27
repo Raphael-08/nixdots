@@ -535,15 +535,16 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1724611550,
-        "narHash": "sha256-rtdo8VG1LwB1nyee5r7iDUbhc/AO7x0+RNElfdtkt1E=",
+        "lastModified": 1724680830,
+        "narHash": "sha256-VZPQrZlzynYz2GzA1/0s5qwc8DtplSbJZGnNLZpWe7M=",
         "owner": "Raphael-08",
         "repo": "zen-browser",
-        "rev": "85d8e3460a8815b556250d492c22fbcd5b9149a4",
+        "rev": "ac9a6c1f9e932a41ce215a206a95047bfc8b34c1",
         "type": "github"
       },
       "original": {
         "owner": "Raphael-08",
+        "ref": "main",
         "repo": "zen-browser",
         "type": "github"
       }

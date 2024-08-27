@@ -26,7 +26,6 @@ in {
     protonup-qt
     font-awesome 
     swayidle 
-    brave
     vlc
     vscode
     zoxide

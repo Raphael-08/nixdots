@@ -153,7 +153,6 @@ in
                    new_status = true
                  }
 
-                 bind = ${modifier},Z,exec,zen
                  bind = ALT,s,exec,spotify
                  bind = ${modifier},d,exec,vesktop
                  bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
@@ -172,7 +171,6 @@ in
               ''
             }
                  bind = ${modifier},E,exec,emopicker9000
-                 bind = ALT,g,exec,brave --app=https://github.com/ --window-mode=windowed
                  bind = ${modifier}CTRL,p,exec,wlogout
                  bind = ${modifier},c,exec,code
                  bind = ${modifier},S,exec,screenshootin
