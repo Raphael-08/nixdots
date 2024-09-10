@@ -35,7 +35,6 @@
     ninja 
     go 
     nodejs 
-    symbola
     noto-fonts-color-emoji 
     material-icons 
     brightnessctl

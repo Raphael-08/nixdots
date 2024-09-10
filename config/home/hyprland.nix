@@ -153,7 +153,7 @@ in
                    new_status = true
                  }
 
-                 bind = ALT,s,exec,spotify
+                 bind = CTRL ALT,s,exec,spotify
                  bind = ${modifier},d,exec,vesktop
                  bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
 
@@ -162,14 +162,14 @@ in
                  bind = ${modifier}SHIFT,W,exec,web-search
                  bind = ${modifier}SHIFT,N,exec,swaync-client -rs
                  ${
-              if browser == "google-chrome"
-              then ''
-                bind = ${modifier},W,exec,google-chrome-stable
-              ''
-              else ''
-                bind = ${modifier},W,exec,${browser}
-              ''
-            }
+                    if browser == "google-chrome"
+                      then ''
+                      bind = ${modifier},W,exec,google-chrome-stable
+                    ''
+                    else ''
+                      bind = ${modifier},W,exec,${browser}
+                    ''
+                  }
                  bind = ${modifier},E,exec,emopicker9000
                  bind = ${modifier}CTRL,p,exec,wlogout
                  bind = ${modifier},c,exec,code
