@@ -6,7 +6,7 @@
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nix-colors.url = "github:misterio77/nix-colors";
-    zen-browser.url = "github:Raphael-08/zen-browser/main";
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     hyprlock = {
       url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +33,7 @@
 
     pkgs = import nixpkgs {
       inherit system;
-      config = {
+      config = {zen-browser.url = "github:Raphael-08/zen-browser/main";
 	    allowUnfree = true;
       };
     };
