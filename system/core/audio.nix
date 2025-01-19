@@ -27,7 +27,7 @@
       };
     };
   };
-  services.pulseaudio.enable = false;
+  hardware.pulseaudio.enable = false;
 
   environment.systemPackages = with pkgs;
   [

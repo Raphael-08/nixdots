@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{ pkgs, config, username, ... }:
 {
     home.file.".config/swappy/config".text = ''
       [Default]

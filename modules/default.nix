@@ -3,10 +3,8 @@
   # Import Program Configurations
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./drivers
-    ./core
     ./programs
-    ./styles
+    ./shell
   ];
 
   # Home Manager Settings

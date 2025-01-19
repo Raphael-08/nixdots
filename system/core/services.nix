@@ -8,7 +8,6 @@
     gvfs.enable = true;
     tumbler.enable = true;
     gnome.gnome-keyring.enable=true;
-    throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
     tlp.enable = true;
     libinput.enable = true;
     flatpak.enable = false;

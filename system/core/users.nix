@@ -1,4 +1,4 @@
-{ pkgs, username, theShell, ... }:
+{ pkgs, username, ... }:
 {
   users = {
     mutableUsers = true;
@@ -12,7 +12,7 @@
         "wheel" 
         "libvirtd" 
       ];
-      shell = pkgs.${theShell};
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [];
     };

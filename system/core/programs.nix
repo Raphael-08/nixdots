@@ -9,5 +9,4 @@ _: {
       enableSSHSupport = true;
     };
   };
-  virt-manager.enable = true;
 }

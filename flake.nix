@@ -53,6 +53,7 @@
               inherit hostname;
           };
           modules = [ 
+            ./system
             home-manager.nixosModules.home-manager 
             {
               home-manager.extraSpecialArgs = {
@@ -66,7 +67,7 @@
                   useUserPackages = true;
                   backupFileExtension = "backup";
                   users.${username} = import ./modules/default.nix;
-                }
+                };
             }
           ];
         };

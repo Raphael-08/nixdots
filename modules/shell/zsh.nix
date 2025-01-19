@@ -1,7 +1,7 @@
 { config, lib, pkgs, ... }:
 {
   programs.zsh = {
-    enable = false;
+    enable = true;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     historySubstringSearch.enable = true;

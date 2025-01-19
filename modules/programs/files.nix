@@ -5,10 +5,9 @@
   home.file = {
     ".emoji".source = ../../files/emoji;
     ".base16-themes".source = ../../files/base16-themes;
-    ".face".source = ../../files/face.jpg; # For GDM
-    ".face.icon".source = ../../files/face.jpg; # For SDDM
+    ".face".source = ../../files/face.png; # For GDM
+    ".face.icon".source = ../../files/face.png; # For SDDM
     ".config/starship.toml".source = ../../files/starship.toml;
-    ".config/swaylock-bg.jpg".source = ../../files/media/swaylock-bg.jpg;
     ".config/ascii-neofetch".source = ../../files/ascii-neofetch;
     ".config/wlogout/icons" = {
       source = ../../files/wlogout;
