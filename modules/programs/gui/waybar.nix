@@ -1,9 +1,11 @@
 { pkgs, config, lib, ... }:
 
 let
+	bar-number = true;
   palette = config.colorScheme.palette;
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
-  inherit (import ../../options.nix) slickbar bar-number simplebar clock24h waybarAnim;
+  slickbar = false;
+	simplebar = true;
 in with lib; {
   # Configure & Theme Waybar
   programs.waybar = {
@@ -28,8 +30,7 @@ in with lib; {
       	on-scroll-down = "hyprctl dispatch workspace e-1";
       };
       "clock" = {
-	format = if clock24h == true then '' {:L%H:%M}'' 
-	else '' {:L%I:%M %p}'';
+	format = '' {:L%I:%M %p}'';
       	tooltip = true;
 	tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
       };
@@ -347,10 +348,7 @@ in with lib; {
     		color: #${palette.base01};
         background: linear-gradient(45deg, #${palette.base0C}, #${palette.base0F}, #${palette.base0B}, #${palette.base08});
         background-size: 300% 300%;
-        ${if waybarAnim == true then ''
-          animation: gradient_horizontal 15s ease infinite;
-        '' else '' 
-        ''}
+        animation: gradient_horizontal 15s ease infinite;
 				margin: 4px;
 				padding: 2px 10px;
 				border-radius: 10px;

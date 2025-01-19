@@ -5,21 +5,11 @@
   inputs,
   ...
 }: let
+  browser = "zen";
+  terminal = "kitty";
+  borderAnim = true;
   theme = config.colorScheme.palette;
   hyprplugins = inputs.hyprland-plugins.packages.${pkgs.system};
-  inherit
-    (import ../../options.nix)
-    browser
-    cpuType
-    gpuType
-    wallpaperDir
-    borderAnim
-    theKBDLayout
-    terminal
-    theSecondKBDLayout
-    theKBDVariant
-    sdl-videodriver
-    ;
 in
   with lib; {
     wayland.windowManager.hyprland = {
@@ -49,7 +39,7 @@ in
                  }
 
                  input {
-                   kb_layout = ${theKBDLayout}, ${theSecondKBDLayout}
+                   kb_layout = us, de
             kb_options = grp:alt_shift_toggle
                    kb_options=caps:super
                    follow_mouse = 1
@@ -66,29 +56,12 @@ in
                  env = XDG_SESSION_DESKTOP, Hyprland
                  env = GDK_BACKEND, wayland
                  env = CLUTTER_BACKEND, wayland
-                 env = SDL_VIDEODRIVER, ${sdl-videodriver}
+                 env = SDL_VIDEODRIVER, x11
                  env = QT_QPA_PLATFORM, wayland
                  env = QT_WAYLAND_DISABLE_WINDOWDECORATION, 1
                  env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
                  env = MOZ_ENABLE_WAYLAND, 1
                  env = WLR_NO_HARDWARE_CURSORS,1
-                 ${
-              if cpuType == "vm"
-              then ''
-                env = WLR_NO_HARDWARE_CURSORS,1
-                env = WLR_RENDERER_ALLOW_SOFTWARE,1
-              ''
-              else ''
-              ''
-            }
-                 ${
-              if gpuType == "nvidia"
-              then ''
-                env = WLR_NO_HARDWARE_CURSORS,1
-              ''
-              else ''
-              ''
-            }
                  gestures {
                    workspace_swipe = true
                    workspace_swipe_fingers = 3
