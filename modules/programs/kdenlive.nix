@@ -1,6 +1,8 @@
 { pkgs, config, lib, ... }:
 
-let inherit (import ../../options.nix) kdenlive; in
+let 
+  kdenlive = false;
+in
 lib.mkIf (kdenlive == true) {
   home.packages = with pkgs; [
     pkgs.kdenlive
