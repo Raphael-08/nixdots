@@ -21,8 +21,6 @@
       flake = false;
     };
 
-    impermanence.url = "github:nix-community/impermanence";
-    
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
 
     spicetify-nix = {
@@ -31,39 +29,47 @@
     };
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
-  let
-    system = "x86_64-linux";
-    inherit (import ./options.nix) username hostname;
+  outputs = 
+    inputs@{ nixpkgs, home-manager, ... }:
+    let
+      system = "x86_64-linux";
+      username = "mrv";
+      hostname = "HanMa";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config = {zen-browser.url = "github:Raphael-08/zen-browser/main";
-	    allowUnfree = true;
-      };
-    };
-  in {
-    nixosConfigurations = {
-      "${hostname}" = nixpkgs.lib.nixosSystem {
-	specialArgs = { 
-          inherit system; inherit inputs; 
-          inherit username; inherit hostname;
+      pkgs = import nixpkgs {
+        inherit system;
+        config = {
+          allowUnfree = true;
         };
-	modules = [ 
-	  ./system.nix
-	  impermanence.nixosModules.impermanence
-          home-manager.nixosModules.home-manager {
-	    home-manager.extraSpecialArgs = {
-	      inherit username; inherit inputs;
-              inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
-            };
-	    home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "backup";
-	    home-manager.users.${username} = import ./home.nix;
-	  }
-	];
+      };
+    in 
+    {
+      nixosConfigurations = {
+        "${hostname}" = nixpkgs.lib.nixosSystem {
+            specialArgs = { 
+              inherit system; 
+              inherit inputs; 
+              inherit username; 
+              inherit hostname;
+          };
+          modules = [ 
+            home-manager.nixosModules.home-manager 
+            {
+              home-manager.extraSpecialArgs = {
+                inherit username; 
+                inherit inputs;
+                inherit hostname;
+                inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
+                };
+                home-manager = {
+                  useGlobalPkgs = true;
+                  useUserPackages = true;
+                  backupFileExtension = "backup";
+                  users.${username} = import ./modules/default.nix;
+                }
+            }
+          ];
+        };
       };
     };
-  };
 }
