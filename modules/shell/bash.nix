@@ -1,8 +1,5 @@
 { config, lib, pkgs, ... }:
-
-let inherit (import ../../options.nix) flakeDir flakePrev 
-	     hostname flakeBackup theShell; in
-lib.mkIf (theShell == "bash") {
+{
   # Configure Bash
   programs.bash = {
     enable = true;
@@ -20,8 +17,8 @@ lib.mkIf (theShell == "bash") {
     '';
     sessionVariables = {
       ZANEYOS = true;
-      FLAKEBACKUP = "${flakeBackup}";
-      FLAKEPREV = "${flakePrev}";
+      FLAKEBACKUP = "/home/${username}/.nixdots-backup";
+      FLAKEPREV = "/home/${username}/.nixdots-previous";
     };
     shellAliases = {
       sv="sudo nvim";

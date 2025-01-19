@@ -1,9 +1,7 @@
 { config, lib, pkgs, ... }:
-
-let inherit (import ../../options.nix) flakeDir theShell hostname; in
-lib.mkIf (theShell == "zsh") {
+{
   programs.zsh = {
-    enable = true;
+    enable = false;
     syntaxHighlighting.enable = true;
     enableAutosuggestions = true;
     historySubstringSearch.enable = true;
