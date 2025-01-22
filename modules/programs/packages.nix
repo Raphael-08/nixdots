@@ -17,7 +17,6 @@
     rustup 
     audacity 
     pavucontrol
-    vscode
     tree 
     protonup-qt
     font-awesome 
