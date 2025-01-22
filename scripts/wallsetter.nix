@@ -7,16 +7,16 @@ pkgs.writeShellScriptBin "wallsetter" ''
   TRANSITION3="--transition-type center --transition-step 30"
   TRANSITION4="--transition-type outer --transition-pos 0.3,0.8 --transition-step 30"
   TRANSITION5="--transition-type wipe --transition-angle 270 --transition-step 30"
-  WALLPAPER=$(find /home/${username} -name '*' | awk '!/.git/' | tail -n +2 | shuf -n 1)
+  WALLPAPER=$(find /home/${username}/Pictures/Wallpapers -name '*' | awk '!/.git/' | tail -n +2 | shuf -n 1)
   PREVIOUS=$WALLPAPER
-  if [ -d /home/${username} ]; then
-    num_files=$(ls -1 /home/${username} | wc -l)
+  if [ -d /home/${username}/Pictures/Wallpapers ]; then
+    num_files=$(ls -1 /home/${username}/Pictures/Wallpapers | wc -l)
 
     if [ $num_files -lt 1 ]; then
       notify-send -t 9000 "The wallpaper folder is expected to have more than 1 image. Exiting Wallsetter."
       exit
     else
-      cd /home/${username}
+      cd /home/${username}/Pictures/Wallpapers
       if [ -d ".git" ]; then
         git pull
       else
@@ -25,13 +25,13 @@ pkgs.writeShellScriptBin "wallsetter" ''
       fi
     fi
   else
-    ${pkgs.git}/bin/git clone https://github.com/Raphael-08/Wallpaper-lib.git /home/${username}
-    chown -R ${username}:users /home/${username}
+    ${pkgs.git}/bin/git clone https://github.com/Raphael-08/Wallpaper-lib.git /home/${username}/Pictures/Wallpapers
+    chown -R ${username}:users /home/${username}/Pictures/Wallpapers
   fi
   while true;
   do
     if [ "$WALLPAPER" == "$PREVIOUS" ]; then
-      WALLPAPER=$(find /home/${username} -name '*' | awk '!/.git/' | tail -n +2 | shuf -n 1)
+      WALLPAPER=$(find /home/${username}/Pictures/Wallpapers -name '*' | awk '!/.git/' | tail -n +2 | shuf -n 1)
     else
       PREVIOUS=$WALLPAPER
       NUM=$(shuf -e 1 2 3 4 5 -n 1)

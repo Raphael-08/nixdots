@@ -12,6 +12,7 @@
     ./nfs.nix
     ./nh.nix
     ./nix.nix
+    ./packages.nix
     ./polkit.nix
     ./printer.nix
     ./programs.nix
