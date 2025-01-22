@@ -1,5 +1,8 @@
 { inputs, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    brightnessctl
+  ];
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
