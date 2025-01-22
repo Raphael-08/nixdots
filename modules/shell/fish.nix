@@ -18,8 +18,8 @@
       shellAliases = {
         ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
         sv = "sudo nvim";
-        rebuild = "nh os switch --hostname ${hostname} ~/hyprnix";
-        update = "nh os switch --hostname ${hostname}  --update ~/hyprnix";
+        rebuild = "nh os switch --hostname ${hostname} ~/nixdots";
+        update = "nh os switch --hostname ${hostname}  --update ~/nixdots";
         gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
         v = "nvim";
         ls = "eza --icons";
