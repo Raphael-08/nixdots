@@ -542,19 +542,19 @@ in with lib; {
     	color: #${palette.base09};
 	${if slickbar == true then ''
 	  background: #${palette.base00};
-	  border-radius: 0px;
+	  border-radius: 0px 15px 15px 0px;
 	  margin: 5px 0px;
-	  padding: 2px 14px;
+	  padding: 2px 20px;
 	'' else if simplebar == true then ''
 	  background: #${palette.base00};
 	  margin: 6px 0px;
-	  padding: 0px 14px;
-	  border-radius: 0px;
+	  padding: 0px 20px;
+	  border-radius: 0px 15px 15px 0px;
 	'' else ''
 	  background: #${palette.base01};
 	  margin: 4px 0px;
-	  padding: 2px 14px;
-	  border-radius: 0px;
+	  padding: 2px 20px;
+	  border-radius: 0px 15px 15px 0px;
 	''}
       }
       #custom-exit {
