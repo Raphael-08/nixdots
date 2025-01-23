@@ -7,6 +7,12 @@
       "modprobe.blacklist=iTCO_wdt" # watchdog for Intel
     ];
 
+    # for loading animation
+    plymouth = {
+      enable = true;
+      # theme = "rings";
+      # themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["rings"];})];
+    };
     # This is for OBS Virtual Cam Support
     kernelModules = [ "v4l2loopback" ];
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
