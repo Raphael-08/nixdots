@@ -15,7 +15,8 @@ _: {
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
-        "swayosd-server"
+        "swayosd-server &"
+        "toggle_oppacity"
       ];
 
       input = {
