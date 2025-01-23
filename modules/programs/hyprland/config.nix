@@ -16,7 +16,8 @@ _: {
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
         "swayosd-server &"
-        "ollama start"
+        "ollama start &"
+        "blueman-applet"
       ];
 
       input = {
@@ -144,6 +145,7 @@ _: {
         "$mainMod, M, exec, spotify"
         "$mainMod, T, exec, thunar"
         "$mainMod, F, fullscreen, 0"
+        "$mainMod CTRL, p, exec, wlogout"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle_float"
         "$mainMod, A, exec, rofi -show drun || pkill rofi"
