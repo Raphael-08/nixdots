@@ -15,7 +15,6 @@ let
   rofi-launcher = pkgs.writeScriptBin "rofi-launcher" (builtins.readFile ../scripts/rofi-launcher.sh);
   
 
-  toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ../scripts/toggle_blur.sh);
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (
     builtins.readFile ../scripts/toggle_oppacity.sh
   );
@@ -52,7 +51,6 @@ in
     # lofi
     rofi-launcher
 
-    toggle_blur
     toggle_oppacity
     toggle_waybar
     toggle_float

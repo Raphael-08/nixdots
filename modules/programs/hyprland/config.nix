@@ -143,7 +143,6 @@ _: {
         "$mainMod, C ,exec, code"
         "$mainMod, M, exec, spotify"
         "$mainMod, T, exec, thunar"
-        "$mainMod SHIFT, T, exec, toggle_oppacity"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
         "$mainMod, Space, exec, toggle_float"
