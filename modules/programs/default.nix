@@ -1,6 +1,7 @@
 {
   imports = [
     ./gui
+    ./hyprland
 
     ./files.nix
     ./kdenlive.nix

@@ -1,11 +1,10 @@
 {
   imports = [
     ./gtk-qt.nix
-    ./hyprland.nix
-    ./hyprlock.nix
     ./rofi.nix
     ./swappy.nix
     ./swaync.nix
+    ./swayosd.nix
     ./waybar.nix
     ./wlogout.nix
   ];

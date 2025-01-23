@@ -27,6 +27,10 @@
       url = "github:Gerg-L/spicetify-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprmag.url = "github:SIMULATAN/hyprmag";
+
+    hypr-contrib.url = "github:hyprwm/contrib";
   };
 
   outputs = 
