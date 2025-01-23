@@ -1,5 +1,21 @@
 { pkgs, config, lib, ... }:
-{
+{   
+    boot.kernelModules = [
+      "nvidia"
+      "nvidia_modeset"
+      "nvidia_uvm"
+      "nvidia_drm"
+    ];
+
+    environment.variables = {
+      GBM_BACKEND = "nvidia-drm";
+      LIBVA_DRIVER_NAME = "nvidia";
+      __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+      VKD3D_CONFIG = "dxr";
+      PROTON_ENABLE_NGX_UPDATER = "1";
+      PROTON_ENABLE_NVAPI = "1";
+    };
+
     nixpkgs.config.packageOverrides = pkgs: {
       vaapiIntel = pkgs.vaapiIntel.override {
         enableHybridCodec = true;
@@ -8,6 +24,7 @@
     environment.systemPackages = with pkgs; [
       nvtopPackages.full
       nvitop
+      vulkan-validation-layers
     ];
     # OpenGL
     hardware.graphics = {
@@ -21,10 +38,11 @@
     };
     services.xserver.videoDrivers = ["nvidia"];
     hardware.nvidia = {
+      forceFullCompositionPipeline = true;
       # Modesetting is required.
       modesetting.enable = true;
       # Nvidia power management. Experimental, and can cause sleep/suspend to fail.
-      powerManagement.enable = false;
+      powerManagement.enable = true;
       # Fine-grained power management. Turns off GPU when not in use.
       # Experimental and only works on modern Nvidia GPUs (Turing or newer).
       powerManagement.finegrained = false;
