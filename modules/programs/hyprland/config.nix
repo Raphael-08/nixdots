@@ -16,7 +16,7 @@ _: {
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
         "swayosd-server &"
-        "toggle_oppacity"
+        "ollama start"
       ];
 
       input = {
