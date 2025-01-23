@@ -81,13 +81,13 @@ _: {
       };
       decoration = {
         rounding = 5;
-        # active_opacity = 0.90;
-        # inactive_opacity = 0.90;
-        # fullscreen_opacity = 1.0;
+        active_opacity = 0.7;
+        inactive_opacity = 0.7;
+        fullscreen_opacity = 1.0;
 
         blur = {
           enabled = true;
-          size = 3;
+          size = 7;
           passes = 2;
           brightness = 1;
           contrast = 1.4;
