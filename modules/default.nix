@@ -5,6 +5,8 @@
     inputs.nix-colors.homeManagerModules.default
     ./programs
     ./shell
+
+    ../scripts/default.nix
   ];
 
   # Home Manager Settings
