@@ -17,6 +17,7 @@ _: {
         "swww-daemon &"
         "swayosd-server &"
         "ollama start &"
+        "wallsetter &"
         "blueman-applet"
       ];
 
