@@ -234,6 +234,9 @@ _: {
 
         #Media
         ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+        ",XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles 
+        ",XF86AudioNext, exec, playerctl next"
+        ",XF86AudioPrev, exec, playerctl previous"
 
         # clipboard manager
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
