@@ -8,5 +8,6 @@
     ./packages.nix
     ./spotify.nix
     ./vesktop.nix
+    ./waypaper.nix
   ];
 }

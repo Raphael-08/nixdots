@@ -26,6 +26,10 @@
     glxinfo
     (ollama.override { acceleration = "cuda";})
     inputs.zen-browser.packages.${pkgs.system}.default
+
+
+    # web dev
+    corepack_23
   ];
 
   programs.gh.enable = true;
