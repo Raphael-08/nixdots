@@ -30,6 +30,8 @@
 
     # web dev
     corepack_23
+    nodejs_23
+    go
   ];
 
   programs.gh.enable = true;
