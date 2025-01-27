@@ -1,4 +1,4 @@
-{ stdenv, fetchFromGitHub }: 
+{ stdenv, fetchFromGitHub }:
 {
   astronaut = stdenv.mkDerivation rec {
     pname = "sddm-astronaut-theme";

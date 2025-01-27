@@ -1,8 +1,12 @@
-{ pkgs, config, lib, ... }:
-{ 
-  nixpkgs.config.packageOverrides =
-    pkgs: {
-      vaapiIntel = pkgs.vaapiIntel.override {
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
+{
+  nixpkgs.config.packageOverrides = pkgs: {
+    vaapiIntel = pkgs.vaapiIntel.override {
       enableHybridCodec = true;
     };
   };

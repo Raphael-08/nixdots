@@ -6,7 +6,7 @@
     wget
     curl
   ];
-  
+
   #Allow allowUnfree Packages
   nixpkgs.config.allowUnfree = true;
 

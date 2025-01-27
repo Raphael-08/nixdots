@@ -17,7 +17,7 @@ _: {
         "swww-daemon &"
         "swayosd-server &"
         "ollama start &"
-        "wallsetter &"
+        # "wallsetter &"
         "blueman-applet"
       ];
 
@@ -235,7 +235,7 @@ _: {
 
         #Media
         ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
-        ",XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles 
+        ",XF86AudioPlay, exec, playerctl play-pause" # the stupid key is called play , but it toggles
         ",XF86AudioNext, exec, playerctl next"
         ",XF86AudioPrev, exec, playerctl previous"
 

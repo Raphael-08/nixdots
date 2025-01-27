@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, username, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  username,
+  ...
+}:
 {
   # Import Program Configurations
   imports = [
@@ -27,15 +33,15 @@
   # Create XDG Dirs
   xdg = {
     userDirs = {
-        enable = true;
-        createDirectories = true;
+      enable = true;
+      createDirectories = true;
     };
   };
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
 

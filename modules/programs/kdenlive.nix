@@ -1,6 +1,11 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
-let 
+let
   kdenlive = false;
 in
 lib.mkIf (kdenlive == true) {

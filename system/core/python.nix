@@ -1,7 +1,12 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 let
-  my-python-packages = 
+  my-python-packages =
     ps: with ps; [
       pandas
       requests
@@ -15,7 +20,7 @@ let
       accelerate
       transformers
     ];
-in 
+in
 {
   environment.systemPackages = with pkgs; [
     (pkgs.python3.withPackages my-python-packages)

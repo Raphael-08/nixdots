@@ -1,6 +1,11 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
-let  
+let
   logitech = false;
 in
 lib.mkIf (logitech == true) {

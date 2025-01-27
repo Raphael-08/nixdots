@@ -1,4 +1,9 @@
-{ pkgs, config, lib, ... }:
+{
+  pkgs,
+  config,
+  lib,
+  ...
+}:
 
 {
   # List services that you want to enable:
@@ -7,7 +12,7 @@
     fstrim.enable = true;
     gvfs.enable = true;
     tumbler.enable = true;
-    gnome.gnome-keyring.enable=true;
+    gnome.gnome-keyring.enable = true;
     tlp.enable = true;
     libinput.enable = true;
     flatpak.enable = false;

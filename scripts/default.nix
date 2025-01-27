@@ -6,7 +6,6 @@ let
   # music = pkgs.writeShellScriptBin "music" (builtins.readFile ../scripts/music.sh);
   # lofi = pkgs.writeScriptBin "lofi" (builtins.readFile ../scripts/lofi.sh);
   rofi-launcher = pkgs.writeScriptBin "rofi-launcher" (builtins.readFile ../scripts/rofi-launcher.sh);
-  
 
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (
     builtins.readFile ../scripts/toggle_oppacity.sh
@@ -30,11 +29,13 @@ let
   # );
   # power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ../scripts/power-menu.sh);
 
-  nvidia-offload = pkgs.writeScriptBin "nvidia-offload" (builtins.readFile ../scripts/nvidia-offload.sh);
+  nvidia-offload = pkgs.writeScriptBin "nvidia-offload" (
+    builtins.readFile ../scripts/nvidia-offload.sh
+  );
 in
 {
   home.packages = with pkgs; [
-    
+
     wallsetter
 
     runbg

@@ -29,8 +29,7 @@
   };
   services.pulseaudio.enable = false;
 
-  environment.systemPackages = with pkgs;
-  [
+  environment.systemPackages = with pkgs; [
     pavucontrol
     alsa-utils
     pamixer

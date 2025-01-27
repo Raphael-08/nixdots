@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   programs.zsh = {
     enable = true;
@@ -42,17 +47,17 @@
 
     };
     shellAliases = {
-      sv="sudo nvim";
-      rebuild="nh os switch --hostname ${hostname}";
-      update="nh os switch --hostname ${hostname} --update";
-      gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      v="nvim";
-      ls="lsd";
-      ll="lsd -l";
-      la="lsd -a";
-      lal="lsd -al";
-      ".."="cd ..";
-      neofetch="neofetch --ascii ~/.config/ascii-neofetch";
+      sv = "sudo nvim";
+      rebuild = "nh os switch --hostname ${hostname}";
+      update = "nh os switch --hostname ${hostname} --update";
+      gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      v = "nvim";
+      ls = "lsd";
+      ll = "lsd -l";
+      la = "lsd -a";
+      lal = "lsd -al";
+      ".." = "cd ..";
+      neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
     };
   };
 }
