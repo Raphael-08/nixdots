@@ -1,6 +1,5 @@
 {
   pkgs,
-  lib,
   ...
 }:
 {
@@ -13,7 +12,6 @@
         # Color theme
         catppuccin.catppuccin-vsc
         catppuccin.catppuccin-vsc-icons
-        brettm12345.nixfmt-vscode
       ])
       ++ (
         let
