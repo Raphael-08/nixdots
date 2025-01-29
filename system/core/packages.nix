@@ -7,5 +7,15 @@
     # for screenshootin
     slurp
     swappy
+
+    # minecraft launcher
+    prismlauncher
+
+    # java
+    jdk
+
+    # for cooler control
+    lm_sensors
+
   ];
 }
