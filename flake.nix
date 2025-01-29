@@ -31,6 +31,11 @@
     hyprmag.url = "github:SIMULATAN/hyprmag";
 
     hypr-contrib.url = "github:hyprwm/contrib";
+
+    nbfc-linux = {
+      url = "github:nbfc-linux/nbfc-linux";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = 

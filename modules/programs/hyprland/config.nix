@@ -142,7 +142,7 @@ _: {
         "$mainMod, Return, exec, ghostty"
         "$mainMod, W, exec, zen"
         "$mainMod, Q, killactive,"
-        "$mainMod, C ,exec, code"
+        "$mainMod, C ,exec, code --disable-gpu=all"
         "$mainMod, M, exec, spotify"
         "$mainMod, T, exec, thunar"
         "$mainMod, F, fullscreen, 0"
@@ -329,8 +329,9 @@ _: {
     };
 
     extraConfig = "
-      monitor = HDMI-A-1, highres, auto,1
-      monitor = eDP-1,1920x1200@60,auto,1,mirror, HDMI-A-1
+      monitor = eDP-1, 1920x1200@165, 0x0, 1
+      # monitor = HDMI-A-1, highres, auto,1
+      # monitor = eDP-1,1920x1200@60,auto,1,mirror, HDMI-A-1
 
       xwayland {
         force_zero_scaling = true
