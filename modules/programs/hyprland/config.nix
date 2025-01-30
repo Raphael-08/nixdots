@@ -96,7 +96,7 @@ _: {
           ignore_opacity = true;
           noise = 0;
           new_optimizations = true;
-          xray = true;
+          xray = false;
         };
 
         shadow = {

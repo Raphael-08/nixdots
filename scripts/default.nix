@@ -32,6 +32,10 @@ let
   nvidia-offload = pkgs.writeScriptBin "nvidia-offload" (
     builtins.readFile ../scripts/nvidia-offload.sh
   );
+
+  # for dir-env
+
+  create_env = pkgs.writeScriptBin "create_env" (builtins.readFile ../scripts/dev-template.sh);
 in
 {
   home.packages = with pkgs; [
@@ -62,6 +66,8 @@ in
     # power-menu
 
     nvidia-offload
+
+    create_env
 
     (import ../scripts/task-waybar.nix { inherit pkgs; })
   ];

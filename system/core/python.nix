@@ -1,24 +1,37 @@
 {
   pkgs,
-  config,
-  lib,
   ...
 }:
 
 let
   my-python-packages =
     ps: with ps; [
+      # Data Processing & Analysis:
+
+      pyspark
       pandas
-      requests
-      setuptools
-      torch
-      diffusers
-      jupyter
-      notebook
       matplotlib
       seaborn
-      accelerate
+
+      # Machine Learning & Deep Learning:
+
+      torch
       transformers
+      diffusers
+      accelerate
+
+      # Environment & Package Management:
+
+      setuptools
+      
+      # Web Requests & APIs:
+
+      requests
+      
+      # Interactive Computing & Notebooks:
+
+      jupyter
+      notebook
     ];
 in
 {

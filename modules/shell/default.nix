@@ -3,6 +3,7 @@
     # ./bash.nix
     ./btop.nix
     ./cava.nix
+    ./direnv.nix
     ./eza.nix
     ./fastfetch.nix
     ./fish.nix
