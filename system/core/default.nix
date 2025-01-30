@@ -16,7 +16,7 @@
     ./polkit.nix
     ./printer.nix
     ./programs.nix
-    ./python.nix
+    # ./python.nix
     ./security.nix
     ./services.nix
     ./steam.nix
