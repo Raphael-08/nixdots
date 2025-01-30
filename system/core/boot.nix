@@ -19,7 +19,16 @@
       # themePackages = [(pkgs.adi1090x-plymouth-themes.override {selected_themes = ["rings"];})];
     };
     # This is for OBS Virtual Cam Support
-    kernelModules = [ "v4l2loopback" ];
+    kernelModules = [
+      "v4l2loopback"
+      "acpi"
+      "acpi_video"
+      "coretemp" # Intel CPU temperature (or "amdtemp" for AMD CPUs)
+      "acer_wmi" # For Acer laptops
+      "hwmon" # General hardware monitoring
+      "pwm-fan"
+    ];
+
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
     loader = {
